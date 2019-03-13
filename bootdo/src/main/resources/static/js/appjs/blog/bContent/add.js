@@ -34,9 +34,8 @@ function save(status) {
 		success : function(r) {
 			if (r.code == 0) {
 				parent.layer.msg(r.msg);
-				parent.reLoad();
+                location.reload(true);
 				$("#cid").val(r.cid);
-
 			} else {
 				parent.layer.alert(r.msg)
 			}
