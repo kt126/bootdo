@@ -39,6 +39,7 @@ public class MenuServiceImpl implements MenuService {
 			Map<String, Object> attributes = new HashMap<>(16);
 			attributes.put("url", sysMenuDO.getUrl());
 			attributes.put("icon", sysMenuDO.getIcon());
+            attributes.put("type", sysMenuDO.getType());
 			tree.setAttributes(attributes);
 			trees.add(tree);
 		}
@@ -152,6 +153,7 @@ public class MenuServiceImpl implements MenuService {
 			Map<String, Object> attributes = new HashMap<>(16);
 			attributes.put("url", sysMenuDO.getUrl());
 			attributes.put("icon", sysMenuDO.getIcon());
+            attributes.put("type", sysMenuDO.getType());
 			tree.setAttributes(attributes);
 			trees.add(tree);
 		}

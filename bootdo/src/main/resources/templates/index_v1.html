@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit">
-    <title>面向学习型的开源框架，简洁高效，减少过渡封装，展现技术本质</title>
-    <meta name="keywords" content="面向学习型的开源框架，简洁高效，杜绝过渡封装，展现技术本质本质">
-    <meta name="description" content="面向学习型的开源框架，简洁高效，杜绝过渡封装，展现技术本质本质">
+    <title>财务管理</title>
+    <meta name="keywords" content="财务管理">
+    <meta name="description" content="财务管理">
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html"/>
     <![endif]-->
@@ -56,7 +56,7 @@
                             <li><a href="/logout">安全退出</a>
                             </li>
                         </ul>
-                        <div class="logo-element">BootDo</div>
+                        <div class="logo-element">财务管理</div>
                     </div>
                 </li>
                 <li><a href="#"> <i class="fa fa-home"></i> <span
@@ -64,20 +64,34 @@
                 </a>
                     <ul class="nav nav-second-level">
                         <li><a id="index001" class="J_menuItem" href="index_v1.html"
-                               data-index="0" th:href="@{/main}">了解BootDo</a></li>
+                               data-index="0" th:href="@{/main}">我的账户</a></li>
                     </ul>
                 </li>
-                <li th:each="menu : ${menus}"><a href="#"> <i
-                        class="fa fa fa-bar-chart-o" th:class="${menu.attributes.icon}"></i>
+
+                <li th:each="menu : ${menus}">
+                    <a href="#">
+                        <i class="fa fa fa-bar-chart-o" th:class="${menu.attributes.icon}"></i>
                     <span class="nav-label" th:text="${menu.text}">基础信息</span> <span
                             class="fa arrow"></span>
-                </a>
+                  </a>
                     <ul class="nav nav-second-level">
-                        <li th:each="cmenu : ${menu.children}"><a class="J_menuItem" href="graph_echarts.html"
-                                                                  th:text="${cmenu.text}"
-                                                                  th:href="${cmenu.attributes.url}">系统管理</a></li>
+                        <li th:each="cmenu : ${menu.children}">
+                            <a  class="J_menuItem" href="graph_echarts.html"
+                                                                  th:href="${cmenu.attributes.url}">
+                                <span  class="nav-label" th:text="${cmenu.text}">系统管理</span>
+                                <span     class="fa arrow" th:if="${cmenu.attributes.type==0}"></span>
+                            </a>
+                            <ul class="nav nav-third-level" th:if="${cmenu.attributes.type==0}">
+                                <li th:each="dmenu : ${cmenu.children}">
+                                    <a  class="J_menuItem" href="graph_echarts.html"
+                                        th:text="${dmenu.text}"
+                                        th:href="${dmenu.attributes.url}">系统管理</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
+
             </ul>
         </div>
     </nav>
@@ -88,11 +102,10 @@
             <nav class="navbar navbar-static-top" role="navigation"
                  style="margin-bottom: 0">
                 <div class="navbar-header">
-
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-default "
                        href="#" title="收起菜单"><i class="fa fa-bars"></i> </a>
                     <form role="search" class="navbar-form-custom"
-                          method="post" action="">
+                          method="get" action="">
                         <div class="form-group">
                             <input type="text" placeholder="请输入您需要查找的内容 …"
                                    class="form-control" name="top-search" id="top-search">
@@ -101,7 +114,7 @@
                 </div>
                 <ul class="nav navbar-top-links navbar-right">
                     <li class="hidden-xs"><a href="/blog" target="_Blank"
-                                             class=""><i class="fa fa-rss-square"></i>博客</a></li>
+                                             class=""><i class="fa fa-rss-square"></i>首页</a></li>
                     <li class="dropdown"><a class="dropdown-toggle count-info"
                                             data-toggle="dropdown" href="#"> <i class="fa fa-envelope"></i>
                         <span class="label label-warning">{{total}}</span>通知
@@ -171,7 +184,7 @@
                     seamless></iframe>
         </div>
         <div class="footer">
-            <div class="pull-right">开源框架</div>
+            <div class="pull-right">财务系统</div>
         </div>
     </div>
     <!--右侧部分结束-->
