@@ -6,17 +6,44 @@
     <title>欢迎页</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .btndome p{ padding-top:10px; color:#666; font-size:12px;}
+        .u_info{padding-top:18px; padding-bottom:5px;font-size:20px;}
+        .u_info span{font-size: 20px;}
+        .ui_mony a{ color:#fff;text-decoration: underline;}
+    </style>
 </head>
 <body>
-<div class="panel panel-default">
-    <div class="panel-heading">了解系统</div>
-    <div style="padding: 10px 0 20px 10px;">
-        <h3>&nbsp;&nbsp;&nbsp;项目介绍</h3>
-        <ul>
-            <li>使用官方推荐的thymeleaf做为模板引擎，shiro作为安全框架,主流技术，“一网打尽”</li>
-            <li>极简配置，一键前后台代码生成</li>
-        </ul>
+        <!--右边-->
+        <div class="main_right">
+            <div class="ui_box">
+<!--                <div class="ui_tit"><i class="iconfont"></i>首页</div>-->
+                <div class="ui_zh">
+                    <div class="fl ui_tx">
+                        <img src="/img/zh1.png" width="80px">
+                    </div>
+                    <div class="ui_xin">
+                      <h3 class="u_info" >你好，<span th:text="${user.name}" style="font-size: 19px;font-weight: bold">
+                          测试用户</span></h3>
+                        <p style="padding-left: 110px;" th:text="${user.mobile}"></p>
+                    </div>
+                </div>
+                <div class="ui_mony" style="height:240px;">
+                    <ul>
+                        <li style="width: 48%;">
+                            <h4>
+                                个独管理
+                            </h4>
+                            <p>共<b><a href="/home/customerAccount.html">26</a></b>家公司</p>
+                        </li>
+                        <li class="mony2" style="width: 48%;">
+                            <h4>灵活用工</h4>
+                            <p>共<b><a href="/home/capital/finance.html">2</a></b>家公司</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
     </div>
-</div>
 </body>
 </html>

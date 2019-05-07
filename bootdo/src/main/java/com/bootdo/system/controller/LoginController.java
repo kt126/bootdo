@@ -86,7 +86,8 @@ public class LoginController extends BaseController {
 	}
 
 	@GetMapping("/main")
-	String main() {
+	String main(Model model) {
+	    model.addAttribute("user",getUser());
 		return "main";
 	}
 
